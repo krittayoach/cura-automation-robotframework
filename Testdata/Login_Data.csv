@@ -1,0 +1,9 @@
+${test_id},${username},${password},${expected_error},${description}
+CURA_LOG001_001,John Doe,ThisIsNotAPassword,,Login สำเร็จด้วยข้อมูลที่ถูกต้อง
+CURA_LOG001_002,,,Login failed! Please ensure the username and password are valid.,Login ไม่สำเร็จเนื่องจากไม่กรอกทั้ง Username และ Password
+CURA_LOG001_003,,,Login failed! Please ensure the username and password are valid.,กรณีคลิกปุ่ม Login ซ้ำ โดยไม่ระบุข้อมูล
+CURA_LOG001_004,John Doing,ThisIsNotAPassword,Login failed! Please ensure the username and password are valid.,Login ไม่สำเร็จเนื่องจาก Username ไม่มีในระบบ
+CURA_LOG001_005,,ThisIsNotAPassword,Login failed! Please ensure the username and password are valid.,Login ไม่สำเร็จเนื่องจากไม่กรอก Username
+CURA_LOG001_006,john doe,ThisIsNotAPassword,Login failed! Please ensure the username and password are valid.,Login ไม่สำเร็จเนื่องจาก Username เป็นตัวพิมพ์เล็กหมด (ตรวจสอบ Case Sensitive)
+CURA_LOG001_007,John Doe,ThisIsNotAPass,Login failed! Please ensure the username and password are valid.,Login ไม่สำเร็จเนื่องจาก Password ไม่ถูกต้อง
+CURA_LOG001_008,John Doe,,Login failed! Please ensure the username and password are valid.,Login ไม่สำเร็จเนื่องจากไม่กรอก Password

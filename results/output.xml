@@ -1,0 +1,1286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.12 on win32)" generated="2026-04-09T13:42:07.010661" rpa="false" schemaversion="5">
+<suite id="s1" name="CURA Healthcare Service - Web Application" source="D:\WorkShopAutoMattesting\CURA Healthcare Service - Web Application">
+<suite id="s1-s1" name="Testcase" source="D:\WorkShopAutoMattesting\CURA Healthcare Service - Web Application\Testcase">
+<suite id="s1-s1-s1" name="CURA LOG001" source="D:\WorkShopAutoMattesting\CURA Healthcare Service - Web Application\Testcase\CURA_LOG001.robot">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>15s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-04-09T13:42:07.580785" elapsed="0.001421"/>
+</kw>
+<kw name="Open Browser To Login Page" owner="Common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-09T13:42:07.592147" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002676E7257F0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-09T13:42:07.586674" elapsed="0.005832"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-04-09T13:42:07.594072" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False, 'profile.password_manager_leak_detection': False, 'safebrowsing.enabled': False}</msg>
+<var>${prefs}</var>
+<arg>credentials_enable_service=${False}</arg>
+<arg>profile.password_manager_enabled=${False}</arg>
+<arg>profile.password_manager_leak_detection=${False}</arg>
+<arg>safebrowsing.enabled=${False}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-09T13:42:07.592837" elapsed="0.001576"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-09T13:42:07.594872" elapsed="0.001323"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-09T13:42:07.598321" level="INFO">${arg_disable_features} = --disable-features=PasswordLeakDetection,SafeBrowsingPasswordCheck</msg>
+<var>${arg_disable_features}</var>
+<arg>--disable-features=PasswordLeakDetection,SafeBrowsingPasswordCheck</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-09T13:42:07.596749" elapsed="0.002821"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-09T13:42:07.600295" elapsed="0.001584"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${arg_disable_features}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-09T13:42:07.602285" elapsed="0.000855"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:07.604094" level="INFO">Opening browser 'chrome' to base url 'https://katalon-demo-cura.herokuapp.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-09T13:42:07.603453" elapsed="4.188370"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-09T13:42:11.792873" elapsed="0.090755"/>
+</kw>
+<status status="PASS" start="2026-04-09T13:42:07.584143" elapsed="4.299806"/>
+</kw>
+<arg>Set Selenium Timeout</arg>
+<arg>15s</arg>
+<arg>AND</arg>
+<arg>Open Browser To Login Page</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-09T13:42:07.579775" elapsed="4.304358"/>
+</kw>
+<test id="s1-s1-s1-t1" name="[Documentation]" line="20">
+<kw name="Local Login Template">
+<kw name="Login Template" owner="Login_Function">
+<kw name="Open Login Page" owner="Login_Function">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:11.898556" level="INFO">Opening url 'https://katalon-demo-cura.herokuapp.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-09T13:42:11.897303" elapsed="0.350382"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${APPT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:12.249411" elapsed="0.069719"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:12.321298" level="INFO">Clicking element 'id=btn-make-appointment'.</msg>
+<arg>${APPT_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:12.319983" elapsed="0.623206"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:12.944079" elapsed="0.052260"/>
+</kw>
+<doc>เปิดหน้าแรกและนำทางไปยังหน้า Login</doc>
+<status status="PASS" start="2026-04-09T13:42:11.894863" elapsed="1.102082"/>
+</kw>
+<kw name="Submit Login Form" owner="Login_Function">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:13.004373" level="INFO">Typing text 'John Doe' into text field 'id=txt-username'.</msg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:13.002726" elapsed="0.294478"/>
+</kw>
+<arg>'${username}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:13.000495" elapsed="0.297084"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:13.300161" level="INFO">Typing password into text field 'id=txt-password'.</msg>
+<msg time="2026-04-09T13:42:13.371596" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:13.299575" elapsed="0.187109"/>
+</kw>
+<arg>'${password}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Password</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:13.298324" elapsed="0.188679"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:13.489550" level="INFO">Clicking button 'id=btn-login'.</msg>
+<arg>${LOGIN_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:13.487507" elapsed="0.730384"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>กรอกข้อมูล Login และกดปุ่มยืนยัน</doc>
+<status status="PASS" start="2026-04-09T13:42:12.998835" elapsed="1.220381"/>
+</kw>
+<kw name="Verify Login Result" owner="Login_Function">
+<if>
+<branch type="IF" condition="'${expected_error}' == '${EMPTY}'">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Make Appointment</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-09T13:42:14.226519" elapsed="0.087984"/>
+</kw>
+<kw name="Logout Process" owner="Login_Function">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:14.317117" level="INFO">Clicking element 'id=menu-toggle'.</msg>
+<arg>${MENU_TOGGLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:14.316102" elapsed="0.131446"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:14.447957" elapsed="0.022077"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:14.471146" level="INFO">Clicking element 'xpath=//a[text()='Logout']'.</msg>
+<arg>${LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:14.470403" elapsed="0.710740"/>
+</kw>
+<status status="PASS" start="2026-04-09T13:42:14.315028" elapsed="0.867047"/>
+</kw>
+<status status="PASS" start="2026-04-09T13:42:14.223926" elapsed="0.958427"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-09T13:42:15.183697" elapsed="0.001177"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>${expected_error}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-04-09T13:42:15.185507" elapsed="0.000468"/>
+</kw>
+<status status="NOT RUN" start="2026-04-09T13:42:15.182571" elapsed="0.003615"/>
+</branch>
+<status status="PASS" start="2026-04-09T13:42:14.223732" elapsed="0.962576"/>
+</if>
+<arg>${expected_error}</arg>
+<status status="PASS" start="2026-04-09T13:42:14.221093" elapsed="0.965391"/>
+</kw>
+<arg>${test_id}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${expected_error}</arg>
+<status status="PASS" start="2026-04-09T13:42:11.893318" elapsed="3.293359"/>
+</kw>
+<arg>test_id=CURA_LOG001_001</arg>
+<arg>username=John Doe</arg>
+<arg>password=ThisIsNotAPassword</arg>
+<arg>expected_error=</arg>
+<arg>description=Login สำเร็จด้วยข้อมูลที่ถูกต้อง</arg>
+<status status="PASS" start="2026-04-09T13:42:11.891795" elapsed="3.295096"/>
+</kw>
+<tag>Login</tag>
+<status status="PASS" start="2026-04-09T13:42:11.884406" elapsed="3.303184"/>
+</test>
+<test id="s1-s1-s1-t2" name="[Documentation]" line="20">
+<kw name="Local Login Template">
+<kw name="Login Template" owner="Login_Function">
+<kw name="Open Login Page" owner="Login_Function">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:15.297569" level="INFO">Opening url 'https://katalon-demo-cura.herokuapp.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-09T13:42:15.297209" elapsed="0.315649"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${APPT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:15.613328" elapsed="0.026236"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:15.640613" level="INFO">Clicking element 'id=btn-make-appointment'.</msg>
+<arg>${APPT_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:15.639955" elapsed="0.445272"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:16.085892" elapsed="0.183192"/>
+</kw>
+<doc>เปิดหน้าแรกและนำทางไปยังหน้า Login</doc>
+<status status="PASS" start="2026-04-09T13:42:15.296492" elapsed="0.973153"/>
+</kw>
+<kw name="Submit Login Form" owner="Login_Function">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:16.274386" elapsed="0.083633"/>
+</kw>
+<arg>'${username}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:16.272437" elapsed="0.086184"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:16.361003" elapsed="0.103452"/>
+</kw>
+<arg>'${password}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Password</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:16.359454" elapsed="0.106019"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:16.468728" level="INFO">Clicking button 'id=btn-login'.</msg>
+<arg>${LOGIN_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:16.466361" elapsed="0.781183"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>กรอกข้อมูล Login และกดปุ่มยืนยัน</doc>
+<status status="PASS" start="2026-04-09T13:42:16.270475" elapsed="0.977395"/>
+</kw>
+<kw name="Verify Login Result" owner="Login_Function">
+<if>
+<branch type="IF" condition="'${expected_error}' == '${EMPTY}'">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Make Appointment</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-04-09T13:42:17.250046" elapsed="0.000201"/>
+</kw>
+<kw name="Logout Process" owner="Login_Function">
+<status status="NOT RUN" start="2026-04-09T13:42:17.250510" elapsed="0.000235"/>
+</kw>
+<status status="NOT RUN" start="2026-04-09T13:42:17.249481" elapsed="0.001372"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:17.251333" elapsed="0.044707"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:17.297146" level="INFO">Verifying element 'xpath=//p[contains(@class, 'text-danger')]' contains exact text 'Login failed! Please ensure the username and password are valid.'.</msg>
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>${expected_error}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-04-09T13:42:17.296413" elapsed="0.029315"/>
+</kw>
+<status status="PASS" start="2026-04-09T13:42:17.250951" elapsed="0.075252"/>
+</branch>
+<status status="PASS" start="2026-04-09T13:42:17.249437" elapsed="0.076881"/>
+</if>
+<arg>${expected_error}</arg>
+<status status="PASS" start="2026-04-09T13:42:17.248539" elapsed="0.077914"/>
+</kw>
+<arg>${test_id}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${expected_error}</arg>
+<status status="PASS" start="2026-04-09T13:42:15.294396" elapsed="2.032232"/>
+</kw>
+<arg>test_id=CURA_LOG001_002</arg>
+<arg>username=</arg>
+<arg>password=</arg>
+<arg>expected_error=Login failed! Please ensure the username and password are valid.</arg>
+<arg>description=Login ไม่สำเร็จเนื่องจากไม่กรอกทั้ง Username และ Password</arg>
+<status status="PASS" start="2026-04-09T13:42:15.292029" elapsed="2.035321"/>
+</kw>
+<tag>Login</tag>
+<status status="PASS" start="2026-04-09T13:42:15.195124" elapsed="2.132816"/>
+</test>
+<test id="s1-s1-s1-t3" name="[Documentation]" line="20">
+<kw name="Local Login Template">
+<kw name="Login Template" owner="Login_Function">
+<kw name="Open Login Page" owner="Login_Function">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:17.409362" level="INFO">Opening url 'https://katalon-demo-cura.herokuapp.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-09T13:42:17.406942" elapsed="0.301732"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${APPT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:17.709189" elapsed="0.017273"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:17.727419" level="INFO">Clicking element 'id=btn-make-appointment'.</msg>
+<arg>${APPT_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:17.726791" elapsed="0.395749"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:18.123078" elapsed="0.086254"/>
+</kw>
+<doc>เปิดหน้าแรกและนำทางไปยังหน้า Login</doc>
+<status status="PASS" start="2026-04-09T13:42:17.404111" elapsed="0.805639"/>
+</kw>
+<kw name="Submit Login Form" owner="Login_Function">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:18.215470" level="INFO">Typing text 'John Doing' into text field 'id=txt-username'.</msg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:18.214541" elapsed="0.387442"/>
+</kw>
+<arg>'${username}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:18.211615" elapsed="0.391352"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:18.613159" level="INFO">Typing password into text field 'id=txt-password'.</msg>
+<msg time="2026-04-09T13:42:18.706634" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:18.609796" elapsed="0.190673"/>
+</kw>
+<arg>'${password}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Password</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:18.604261" elapsed="0.196508"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:18.801577" level="INFO">Clicking button 'id=btn-login'.</msg>
+<arg>${LOGIN_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:18.801014" elapsed="0.682586"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>กรอกข้อมูล Login และกดปุ่มยืนยัน</doc>
+<status status="PASS" start="2026-04-09T13:42:18.210091" elapsed="1.273930"/>
+</kw>
+<kw name="Verify Login Result" owner="Login_Function">
+<if>
+<branch type="IF" condition="'${expected_error}' == '${EMPTY}'">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Make Appointment</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-04-09T13:42:19.488046" elapsed="0.001149"/>
+</kw>
+<kw name="Logout Process" owner="Login_Function">
+<status status="NOT RUN" start="2026-04-09T13:42:19.490125" elapsed="0.000442"/>
+</kw>
+<status status="NOT RUN" start="2026-04-09T13:42:19.485968" elapsed="0.004787"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:19.491349" elapsed="0.052446"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:19.544897" level="INFO">Verifying element 'xpath=//p[contains(@class, 'text-danger')]' contains exact text 'Login failed! Please ensure the username and password are valid.'.</msg>
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>${expected_error}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-04-09T13:42:19.544162" elapsed="0.022897"/>
+</kw>
+<status status="PASS" start="2026-04-09T13:42:19.490892" elapsed="0.076681"/>
+</branch>
+<status status="PASS" start="2026-04-09T13:42:19.485872" elapsed="0.081889"/>
+</if>
+<arg>${expected_error}</arg>
+<status status="PASS" start="2026-04-09T13:42:19.484718" elapsed="0.083296"/>
+</kw>
+<arg>${test_id}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${expected_error}</arg>
+<status status="PASS" start="2026-04-09T13:42:17.400752" elapsed="2.167594"/>
+</kw>
+<arg>test_id=CURA_LOG001_004</arg>
+<arg>username=John Doing</arg>
+<arg>password=ThisIsNotAPassword</arg>
+<arg>expected_error=Login failed! Please ensure the username and password are valid.</arg>
+<arg>description=Login ไม่สำเร็จเนื่องจาก Username ไม่มีในระบบ</arg>
+<status status="PASS" start="2026-04-09T13:42:17.398623" elapsed="2.170032"/>
+</kw>
+<tag>Login</tag>
+<status status="PASS" start="2026-04-09T13:42:17.333958" elapsed="2.235451"/>
+</test>
+<test id="s1-s1-s1-t4" name="[Documentation]" line="20">
+<kw name="Local Login Template">
+<kw name="Login Template" owner="Login_Function">
+<kw name="Open Login Page" owner="Login_Function">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:19.676970" level="INFO">Opening url 'https://katalon-demo-cura.herokuapp.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-09T13:42:19.675548" elapsed="0.409554"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${APPT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:20.085634" elapsed="0.026225"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:20.113924" level="INFO">Clicking element 'id=btn-make-appointment'.</msg>
+<arg>${APPT_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:20.112582" elapsed="0.469132"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:20.582656" elapsed="0.116743"/>
+</kw>
+<doc>เปิดหน้าแรกและนำทางไปยังหน้า Login</doc>
+<status status="PASS" start="2026-04-09T13:42:19.674067" elapsed="1.027935"/>
+</kw>
+<kw name="Submit Login Form" owner="Login_Function">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:20.707635" elapsed="0.089776"/>
+</kw>
+<arg>'${username}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:20.705522" elapsed="0.092170"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:20.806423" level="INFO">Typing password into text field 'id=txt-password'.</msg>
+<msg time="2026-04-09T13:42:20.899468" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:20.804451" elapsed="0.243993"/>
+</kw>
+<arg>'${password}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Password</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:20.798699" elapsed="0.250017"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:21.049970" level="INFO">Clicking button 'id=btn-login'.</msg>
+<arg>${LOGIN_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:21.049143" elapsed="0.077659"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>กรอกข้อมูล Login และกดปุ่มยืนยัน</doc>
+<status status="PASS" start="2026-04-09T13:42:20.703488" elapsed="0.423551"/>
+</kw>
+<kw name="Verify Login Result" owner="Login_Function">
+<if>
+<branch type="IF" condition="'${expected_error}' == '${EMPTY}'">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Make Appointment</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-04-09T13:42:21.128559" elapsed="0.000180"/>
+</kw>
+<kw name="Logout Process" owner="Login_Function">
+<status status="NOT RUN" start="2026-04-09T13:42:21.128985" elapsed="0.000168"/>
+</kw>
+<status status="NOT RUN" start="2026-04-09T13:42:21.128049" elapsed="0.001195"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:21.944216" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-09T13:42:21.944831" level="FAIL">WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
+  (Session info: chrome=146.0.7680.178)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7114129c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff71113a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff710e9db2d]
+	chromedriver!(No symbol) [0x7ff710e89653]
+	chromedriver!(No symbol) [0x7ff710e87f2f]
+	chromedriver!(No symbol) [0x7ff710e8865f]
+	chromedriver!(No symbol) [0x7ff710eb244d]
+	chromedriver!(No symbol) [0x7ff710eb5331]
+	chromedriver!(No symbol) [0x7ff710eb3940]
+	chromedriver!(No symbol) [0x7ff710ea677d]
+	chromedriver!(No symbol) [0x7ff710ea68f7]
+	chromedriver!(No symbol) [0x7ff710ea450e]
+	chromedriver!(No symbol) [0x7ff710ea8f5f]
+	chromedriver!(No symbol) [0x7ff710f44f41]
+	chromedriver!(No symbol) [0x7ff710f1ff8a]
+	chromedriver!(No symbol) [0x7ff710f43b9b]
+	chromedriver!(No symbol) [0x7ff710ee9298]
+	chromedriver!(No symbol) [0x7ff710eea183]
+	chromedriver!GetHandleVerifier [0x7ff71143de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff711438588+313348]
+	chromedriver!GetHandleVerifier [0x7ff711459d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff711156785+31545]
+	chromedriver!GetHandleVerifier [0x7ff71115facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff711143634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff7111437e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff711127e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff8c452e8d7+17]
+	ntdll!RtlUserThreadStart [0x7ff8c58ec48c+2c]
+</msg>
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-04-09T13:42:21.129524" elapsed="1.064200">WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
+  (Session info: chrome=146.0.7680.178)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7114129c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff71113a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff710e9db2d]
+	chromedriver!(No symbol) [0x7ff710e89653]
+	chromedriver!(No symbol) [0x7ff710e87f2f]
+	chromedriver!(No symbol) [0x7ff710e8865f]
+	chromedriver!(No symbol) [0x7ff710eb244d]
+	chromedriver!(No symbol) [0x7ff710eb5331]
+	chromedriver!(No symbol) [0x7ff710eb3940]
+	chromedriver!(No symbol) [0x7ff710ea677d]
+	chromedriver!(No symbol) [0x7ff710ea68f7]
+	chromedriver!(No symbol) [0x7ff710ea450e]
+	chromedriver!(No symbol) [0x7ff710ea8f5f]
+	chromedriver!(No symbol) [0x7ff710f44f41]
+	chromedriver!(No symbol) [0x7ff710f1ff8a]
+	chromedriver!(No symbol) [0x7ff710f43b9b]
+	chromedriver!(No symbol) [0x7ff710ee9298]
+	chromedriver!(No symbol) [0x7ff710eea183]
+	chromedriver!GetHandleVerifier [0x7ff71143de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff711438588+313348]
+	chromedriver!GetHandleVerifier [0x7ff711459d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff711156785+31545]
+	chromedriver!GetHandleVerifier [0x7ff71115facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff711143634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff7111437e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff711127e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff8c452e8d7+17]
+	ntdll!RtlUserThreadStart [0x7ff8c58ec48c+2c]
+</status>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>${expected_error}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-04-09T13:42:22.194173" elapsed="0.000342"/>
+</kw>
+<status status="FAIL" start="2026-04-09T13:42:21.129314" elapsed="1.065459">WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
+  (Session info: chrome=146.0.7680.178)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7114129c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff71113a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff710e9db2d]
+	chromedriver!(No symbol) [0x7ff710e89653]
+	chromedriver!(No symbol) [0x7ff710e87f2f]
+	chromedriver!(No symbol) [0x7ff710e8865f]
+	chromedriver!(No symbol) [0x7ff710eb244d]
+	chromedriver!(No symbol) [0x7ff710eb5331]
+	chromedriver!(No symbol) [0x7ff710eb3940]
+	chromedriver!(No symbol) [0x7ff710ea677d]
+	chromedriver!(No symbol) [0x7ff710ea68f7]
+	chromedriver!(No symbol) [0x7ff710ea450e]
+	chromedriver!(No symbol) [0x7ff710ea8f5f]
+	chromedriver!(No symbol) [0x7ff710f44f41]
+	chromedriver!(No symbol) [0x7ff710f1ff8a]
+	chromedriver!(No symbol) [0x7ff710f43b9b]
+	chromedriver!(No symbol) [0x7ff710ee9298]
+	chromedriver!(No symbol) [0x7ff710eea183]
+	chromedriver!GetHandleVerifier [0x7ff71143de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff711438588+313348]
+	chromedriver!GetHandleVerifier [0x7ff711459d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff711156785+31545]
+	chromedriver!GetHandleVerifier [0x7ff71115facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff711143634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff7111437e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff711127e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff8c452e8d7+17]
+	ntdll!RtlUserThreadStart [0x7ff8c58ec48c+2c]
+</status>
+</branch>
+<status status="FAIL" start="2026-04-09T13:42:21.128008" elapsed="1.067124">WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
+  (Session info: chrome=146.0.7680.178)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7114129c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff71113a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff710e9db2d]
+	chromedriver!(No symbol) [0x7ff710e89653]
+	chromedriver!(No symbol) [0x7ff710e87f2f]
+	chromedriver!(No symbol) [0x7ff710e8865f]
+	chromedriver!(No symbol) [0x7ff710eb244d]
+	chromedriver!(No symbol) [0x7ff710eb5331]
+	chromedriver!(No symbol) [0x7ff710eb3940]
+	chromedriver!(No symbol) [0x7ff710ea677d]
+	chromedriver!(No symbol) [0x7ff710ea68f7]
+	chromedriver!(No symbol) [0x7ff710ea450e]
+	chromedriver!(No symbol) [0x7ff710ea8f5f]
+	chromedriver!(No symbol) [0x7ff710f44f41]
+	chromedriver!(No symbol) [0x7ff710f1ff8a]
+	chromedriver!(No symbol) [0x7ff710f43b9b]
+	chromedriver!(No symbol) [0x7ff710ee9298]
+	chromedriver!(No symbol) [0x7ff710eea183]
+	chromedriver!GetHandleVerifier [0x7ff71143de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff711438588+313348]
+	chromedriver!GetHandleVerifier [0x7ff711459d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff711156785+31545]
+	chromedriver!GetHandleVerifier [0x7ff71115facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff711143634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff7111437e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff711127e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff8c452e8d7+17]
+	ntdll!RtlUserThreadStart [0x7ff8c58ec48c+2c]
+</status>
+</if>
+<arg>${expected_error}</arg>
+<status status="FAIL" start="2026-04-09T13:42:21.127363" elapsed="1.068094">WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
+  (Session info: chrome=146.0.7680.178)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7114129c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff71113a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff710e9db2d]
+	chromedriver!(No symbol) [0x7ff710e89653]
+	chromedriver!(No symbol) [0x7ff710e87f2f]
+	chromedriver!(No symbol) [0x7ff710e8865f]
+	chromedriver!(No symbol) [0x7ff710eb244d]
+	chromedriver!(No symbol) [0x7ff710eb5331]
+	chromedriver!(No symbol) [0x7ff710eb3940]
+	chromedriver!(No symbol) [0x7ff710ea677d]
+	chromedriver!(No symbol) [0x7ff710ea68f7]
+	chromedriver!(No symbol) [0x7ff710ea450e]
+	chromedriver!(No symbol) [0x7ff710ea8f5f]
+	chromedriver!(No symbol) [0x7ff710f44f41]
+	chromedriver!(No symbol) [0x7ff710f1ff8a]
+	chromedriver!(No symbol) [0x7ff710f43b9b]
+	chromedriver!(No symbol) [0x7ff710ee9298]
+	chromedriver!(No symbol) [0x7ff710eea183]
+	chromedriver!GetHandleVerifier [0x7ff71143de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff711438588+313348]
+	chromedriver!GetHandleVerifier [0x7ff711459d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff711156785+31545]
+	chromedriver!GetHandleVerifier [0x7ff71115facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff711143634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff7111437e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff711127e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff8c452e8d7+17]
+	ntdll!RtlUserThreadStart [0x7ff8c58ec48c+2c]
+</status>
+</kw>
+<arg>${test_id}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${expected_error}</arg>
+<status status="FAIL" start="2026-04-09T13:42:19.672433" elapsed="2.523389">WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
+  (Session info: chrome=146.0.7680.178)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7114129c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff71113a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff710e9db2d]
+	chromedriver!(No symbol) [0x7ff710e89653]
+	chromedriver!(No symbol) [0x7ff710e87f2f]
+	chromedriver!(No symbol) [0x7ff710e8865f]
+	chromedriver!(No symbol) [0x7ff710eb244d]
+	chromedriver!(No symbol) [0x7ff710eb5331]
+	chromedriver!(No symbol) [0x7ff710eb3940]
+	chromedriver!(No symbol) [0x7ff710ea677d]
+	chromedriver!(No symbol) [0x7ff710ea68f7]
+	chromedriver!(No symbol) [0x7ff710ea450e]
+	chromedriver!(No symbol) [0x7ff710ea8f5f]
+	chromedriver!(No symbol) [0x7ff710f44f41]
+	chromedriver!(No symbol) [0x7ff710f1ff8a]
+	chromedriver!(No symbol) [0x7ff710f43b9b]
+	chromedriver!(No symbol) [0x7ff710ee9298]
+	chromedriver!(No symbol) [0x7ff710eea183]
+	chromedriver!GetHandleVerifier [0x7ff71143de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff711438588+313348]
+	chromedriver!GetHandleVerifier [0x7ff711459d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff711156785+31545]
+	chromedriver!GetHandleVerifier [0x7ff71115facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff711143634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff7111437e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff711127e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff8c452e8d7+17]
+	ntdll!RtlUserThreadStart [0x7ff8c58ec48c+2c]
+</status>
+</kw>
+<arg>test_id=CURA_LOG001_005</arg>
+<arg>username=</arg>
+<arg>password=ThisIsNotAPassword</arg>
+<arg>expected_error=Login failed! Please ensure the username and password are valid.</arg>
+<arg>description=Login ไม่สำเร็จเนื่องจากไม่กรอก Username</arg>
+<status status="FAIL" start="2026-04-09T13:42:19.670025" elapsed="2.526141">WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
+  (Session info: chrome=146.0.7680.178)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7114129c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff71113a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff710e9db2d]
+	chromedriver!(No symbol) [0x7ff710e89653]
+	chromedriver!(No symbol) [0x7ff710e87f2f]
+	chromedriver!(No symbol) [0x7ff710e8865f]
+	chromedriver!(No symbol) [0x7ff710eb244d]
+	chromedriver!(No symbol) [0x7ff710eb5331]
+	chromedriver!(No symbol) [0x7ff710eb3940]
+	chromedriver!(No symbol) [0x7ff710ea677d]
+	chromedriver!(No symbol) [0x7ff710ea68f7]
+	chromedriver!(No symbol) [0x7ff710ea450e]
+	chromedriver!(No symbol) [0x7ff710ea8f5f]
+	chromedriver!(No symbol) [0x7ff710f44f41]
+	chromedriver!(No symbol) [0x7ff710f1ff8a]
+	chromedriver!(No symbol) [0x7ff710f43b9b]
+	chromedriver!(No symbol) [0x7ff710ee9298]
+	chromedriver!(No symbol) [0x7ff710eea183]
+	chromedriver!GetHandleVerifier [0x7ff71143de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff711438588+313348]
+	chromedriver!GetHandleVerifier [0x7ff711459d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff711156785+31545]
+	chromedriver!GetHandleVerifier [0x7ff71115facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff711143634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff7111437e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff711127e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff8c452e8d7+17]
+	ntdll!RtlUserThreadStart [0x7ff8c58ec48c+2c]
+</status>
+</kw>
+<tag>Login</tag>
+<status status="FAIL" start="2026-04-09T13:42:19.575224" elapsed="2.621771">WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
+  (Session info: chrome=146.0.7680.178)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7114129c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff71113a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff710e9db2d]
+	chromedriver!(No symbol) [0x7ff710e89653]
+	chromedriver!(No symbol) [0x7ff710e87f2f]
+	chromedriver!(No symbol) [0x7ff710e8865f]
+	chromedriver!(No symbol) [0x7ff710eb244d]
+	chromedriver!(No symbol) [0x7ff710eb5331]
+	chromedriver!(No symbol) [0x7ff710eb3940]
+	chromedriver!(No symbol) [0x7ff710ea677d]
+	chromedriver!(No symbol) [0x7ff710ea68f7]
+	chromedriver!(No symbol) [0x7ff710ea450e]
+	chromedriver!(No symbol) [0x7ff710ea8f5f]
+	chromedriver!(No symbol) [0x7ff710f44f41]
+	chromedriver!(No symbol) [0x7ff710f1ff8a]
+	chromedriver!(No symbol) [0x7ff710f43b9b]
+	chromedriver!(No symbol) [0x7ff710ee9298]
+	chromedriver!(No symbol) [0x7ff710eea183]
+	chromedriver!GetHandleVerifier [0x7ff71143de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff711438588+313348]
+	chromedriver!GetHandleVerifier [0x7ff711459d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff711156785+31545]
+	chromedriver!GetHandleVerifier [0x7ff71115facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff711143634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff7111437e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff711127e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff8c452e8d7+17]
+	ntdll!RtlUserThreadStart [0x7ff8c58ec48c+2c]
+</status>
+</test>
+<test id="s1-s1-s1-t5" name="[Documentation]" line="20">
+<kw name="Local Login Template">
+<kw name="Login Template" owner="Login_Function">
+<kw name="Open Login Page" owner="Login_Function">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:22.328150" level="INFO">Opening url 'https://katalon-demo-cura.herokuapp.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-09T13:42:22.327296" elapsed="0.326261"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${APPT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:22.654234" elapsed="0.028177"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:22.684256" level="INFO">Clicking element 'id=btn-make-appointment'.</msg>
+<arg>${APPT_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:22.683264" elapsed="0.452910"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:23.136864" elapsed="0.132599"/>
+</kw>
+<doc>เปิดหน้าแรกและนำทางไปยังหน้า Login</doc>
+<status status="PASS" start="2026-04-09T13:42:22.326056" elapsed="0.944298"/>
+</kw>
+<kw name="Submit Login Form" owner="Login_Function">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:23.277585" level="INFO">Typing text 'john doe' into text field 'id=txt-username'.</msg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:23.276225" elapsed="0.299449"/>
+</kw>
+<arg>'${username}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:23.274064" elapsed="0.302006"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:23.578566" level="INFO">Typing password into text field 'id=txt-password'.</msg>
+<msg time="2026-04-09T13:42:23.669574" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:23.577502" elapsed="0.180695"/>
+</kw>
+<arg>'${password}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Password</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:23.576429" elapsed="0.182125"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:23.759613" level="INFO">Clicking button 'id=btn-login'.</msg>
+<arg>${LOGIN_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:23.758873" elapsed="0.077462"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>กรอกข้อมูล Login และกดปุ่มยืนยัน</doc>
+<status status="PASS" start="2026-04-09T13:42:23.271677" elapsed="0.564889"/>
+</kw>
+<kw name="Verify Login Result" owner="Login_Function">
+<if>
+<branch type="IF" condition="'${expected_error}' == '${EMPTY}'">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Make Appointment</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-04-09T13:42:23.838150" elapsed="0.000450"/>
+</kw>
+<kw name="Logout Process" owner="Login_Function">
+<status status="NOT RUN" start="2026-04-09T13:42:23.839034" elapsed="0.000533"/>
+</kw>
+<status status="NOT RUN" start="2026-04-09T13:42:23.837585" elapsed="0.002455"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:23.840823" elapsed="0.615641"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:24.458167" level="INFO">Verifying element 'xpath=//p[contains(@class, 'text-danger')]' contains exact text 'Login failed! Please ensure the username and password are valid.'.</msg>
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>${expected_error}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-04-09T13:42:24.456966" elapsed="0.050177"/>
+</kw>
+<status status="PASS" start="2026-04-09T13:42:23.840237" elapsed="0.667126"/>
+</branch>
+<status status="PASS" start="2026-04-09T13:42:23.837548" elapsed="0.669899"/>
+</if>
+<arg>${expected_error}</arg>
+<status status="PASS" start="2026-04-09T13:42:23.836927" elapsed="0.670609"/>
+</kw>
+<arg>${test_id}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${expected_error}</arg>
+<status status="PASS" start="2026-04-09T13:42:22.323349" elapsed="2.184342"/>
+</kw>
+<arg>test_id=CURA_LOG001_006</arg>
+<arg>username=john doe</arg>
+<arg>password=ThisIsNotAPassword</arg>
+<arg>expected_error=Login failed! Please ensure the username and password are valid.</arg>
+<arg>description=Login ไม่สำเร็จเนื่องจาก Username เป็นตัวพิมพ์เล็กหมด (ตรวจสอบ Case Sensitive)</arg>
+<status status="PASS" start="2026-04-09T13:42:22.319771" elapsed="2.188080"/>
+</kw>
+<tag>Login</tag>
+<status status="PASS" start="2026-04-09T13:42:22.224644" elapsed="2.283603"/>
+</test>
+<test id="s1-s1-s1-t6" name="[Documentation]" line="20">
+<kw name="Local Login Template">
+<kw name="Login Template" owner="Login_Function">
+<kw name="Open Login Page" owner="Login_Function">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:24.599020" level="INFO">Opening url 'https://katalon-demo-cura.herokuapp.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-09T13:42:24.597841" elapsed="0.320922"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${APPT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:24.919208" elapsed="0.019420"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:24.939593" level="INFO">Clicking element 'id=btn-make-appointment'.</msg>
+<arg>${APPT_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:24.939002" elapsed="0.412663"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:25.352250" elapsed="0.145201"/>
+</kw>
+<doc>เปิดหน้าแรกและนำทางไปยังหน้า Login</doc>
+<status status="PASS" start="2026-04-09T13:42:24.596953" elapsed="0.901886"/>
+</kw>
+<kw name="Submit Login Form" owner="Login_Function">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:25.509887" level="INFO">Typing text 'John Doe' into text field 'id=txt-username'.</msg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:25.506953" elapsed="0.310604"/>
+</kw>
+<arg>'${username}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:25.504241" elapsed="0.314768"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:25.826404" level="INFO">Typing password into text field 'id=txt-password'.</msg>
+<msg time="2026-04-09T13:42:25.906729" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:25.824851" elapsed="0.150887"/>
+</kw>
+<arg>'${password}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Password</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:25.821008" elapsed="0.154939"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:25.976668" level="INFO">Clicking button 'id=btn-login'.</msg>
+<arg>${LOGIN_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:25.976198" elapsed="0.078558"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>กรอกข้อมูล Login และกดปุ่มยืนยัน</doc>
+<status status="PASS" start="2026-04-09T13:42:25.500775" elapsed="0.554201"/>
+</kw>
+<kw name="Verify Login Result" owner="Login_Function">
+<if>
+<branch type="IF" condition="'${expected_error}' == '${EMPTY}'">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Make Appointment</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-04-09T13:42:26.056337" elapsed="0.000224"/>
+</kw>
+<kw name="Logout Process" owner="Login_Function">
+<status status="NOT RUN" start="2026-04-09T13:42:26.056805" elapsed="0.000191"/>
+</kw>
+<status status="NOT RUN" start="2026-04-09T13:42:26.055891" elapsed="0.001241"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:26.057473" elapsed="0.690125"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:26.748707" level="INFO">Verifying element 'xpath=//p[contains(@class, 'text-danger')]' contains exact text 'Login failed! Please ensure the username and password are valid.'.</msg>
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>${expected_error}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-04-09T13:42:26.747951" elapsed="0.047069"/>
+</kw>
+<status status="PASS" start="2026-04-09T13:42:26.057211" elapsed="0.738022"/>
+</branch>
+<status status="PASS" start="2026-04-09T13:42:26.055857" elapsed="0.739460"/>
+</if>
+<arg>${expected_error}</arg>
+<status status="PASS" start="2026-04-09T13:42:26.055303" elapsed="0.740117"/>
+</kw>
+<arg>${test_id}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${expected_error}</arg>
+<status status="PASS" start="2026-04-09T13:42:24.595816" elapsed="2.199756"/>
+</kw>
+<arg>test_id=CURA_LOG001_007</arg>
+<arg>username=John Doe</arg>
+<arg>password=ThisIsNotAPass</arg>
+<arg>expected_error=Login failed! Please ensure the username and password are valid.</arg>
+<arg>description=Login ไม่สำเร็จเนื่องจาก Password ผิดหรือสั้นเกินไป</arg>
+<status status="PASS" start="2026-04-09T13:42:24.593734" elapsed="2.201995"/>
+</kw>
+<tag>Login</tag>
+<status status="PASS" start="2026-04-09T13:42:24.512732" elapsed="2.283375"/>
+</test>
+<test id="s1-s1-s1-t7" name="[Documentation]" line="20">
+<kw name="Local Login Template">
+<kw name="Login Template" owner="Login_Function">
+<kw name="Open Login Page" owner="Login_Function">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:26.875593" level="INFO">Opening url 'https://katalon-demo-cura.herokuapp.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-09T13:42:26.874344" elapsed="0.311833"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${APPT_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:27.186633" elapsed="0.016149"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:27.203560" level="INFO">Clicking element 'id=btn-make-appointment'.</msg>
+<arg>${APPT_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:27.203067" elapsed="0.421897"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:27.625872" elapsed="0.106536"/>
+</kw>
+<doc>เปิดหน้าแรกและนำทางไปยังหน้า Login</doc>
+<status status="PASS" start="2026-04-09T13:42:26.872703" elapsed="0.860283"/>
+</kw>
+<kw name="Submit Login Form" owner="Login_Function">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:27.746588" level="INFO">Typing text 'John Doe' into text field 'id=txt-username'.</msg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:27.744200" elapsed="0.395458"/>
+</kw>
+<arg>'${username}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Text</arg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:27.735948" elapsed="0.405017"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:28.146110" elapsed="0.072670"/>
+</kw>
+<arg>'${password}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>ELSE</arg>
+<arg>Input Password</arg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-09T13:42:28.142729" elapsed="0.076713"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:28.221555" level="INFO">Clicking button 'id=btn-login'.</msg>
+<arg>${LOGIN_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-09T13:42:28.220090" elapsed="0.690570"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>กรอกข้อมูล Login และกดปุ่มยืนยัน</doc>
+<status status="PASS" start="2026-04-09T13:42:27.733695" elapsed="1.177399"/>
+</kw>
+<kw name="Verify Login Result" owner="Login_Function">
+<if>
+<branch type="IF" condition="'${expected_error}' == '${EMPTY}'">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Make Appointment</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-04-09T13:42:28.913775" elapsed="0.000547"/>
+</kw>
+<kw name="Logout Process" owner="Login_Function">
+<status status="NOT RUN" start="2026-04-09T13:42:28.914832" elapsed="0.000350"/>
+</kw>
+<status status="NOT RUN" start="2026-04-09T13:42:28.912854" elapsed="0.002494"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-09T13:42:28.915869" elapsed="0.051708"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-04-09T13:42:28.970131" level="INFO">Verifying element 'xpath=//p[contains(@class, 'text-danger')]' contains exact text 'Login failed! Please ensure the username and password are valid.'.</msg>
+<arg>${ERROR_MSG_LABEL}</arg>
+<arg>${expected_error}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-04-09T13:42:28.968123" elapsed="0.024703"/>
+</kw>
+<status status="PASS" start="2026-04-09T13:42:28.915470" elapsed="0.077561"/>
+</branch>
+<status status="PASS" start="2026-04-09T13:42:28.912781" elapsed="0.080349"/>
+</if>
+<arg>${expected_error}</arg>
+<status status="PASS" start="2026-04-09T13:42:28.911730" elapsed="0.081498"/>
+</kw>
+<arg>${test_id}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${expected_error}</arg>
+<status status="PASS" start="2026-04-09T13:42:26.869066" elapsed="2.124303"/>
+</kw>
+<arg>test_id=CURA_LOG001_008</arg>
+<arg>username=John Doe</arg>
+<arg>password=</arg>
+<arg>expected_error=Login failed! Please ensure the username and password are valid.</arg>
+<arg>description=Login ไม่สำเร็จเนื่องจากไม่กรอก Password</arg>
+<status status="PASS" start="2026-04-09T13:42:26.867100" elapsed="2.126395"/>
+</kw>
+<tag>Login</tag>
+<status status="PASS" start="2026-04-09T13:42:26.800309" elapsed="2.193562"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-09T13:42:28.999120" elapsed="2.499098"/>
+</kw>
+<doc>การทดสอบระบบ CURA Healthcare Service - Login Function</doc>
+<status status="FAIL" start="2026-04-09T13:42:07.113072" elapsed="24.385762"/>
+</suite>
+<status status="FAIL" start="2026-04-09T13:42:07.105221" elapsed="24.412007"/>
+</suite>
+<status status="FAIL" start="2026-04-09T13:42:07.028451" elapsed="24.503009"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="6" fail="1" skip="0">Login</stat>
+</tag>
+<suite>
+<stat name="CURA Healthcare Service - Web Application" id="s1" pass="6" fail="1" skip="0">CURA Healthcare Service - Web Application</stat>
+<stat name="Testcase" id="s1-s1" pass="6" fail="1" skip="0">CURA Healthcare Service - Web Application.Testcase</stat>
+<stat name="CURA LOG001" id="s1-s1-s1" pass="6" fail="1" skip="0">CURA Healthcare Service - Web Application.Testcase.CURA LOG001</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-04-09T13:42:15.195324" level="WARN">Multiple tests with name '[Documentation]' executed in suite 'CURA Healthcare Service - Web Application.Testcase.CURA LOG001'.</msg>
+<msg time="2026-04-09T13:42:17.334061" level="WARN">Multiple tests with name '[Documentation]' executed in suite 'CURA Healthcare Service - Web Application.Testcase.CURA LOG001'.</msg>
+<msg time="2026-04-09T13:42:19.575313" level="WARN">Multiple tests with name '[Documentation]' executed in suite 'CURA Healthcare Service - Web Application.Testcase.CURA LOG001'.</msg>
+<msg time="2026-04-09T13:42:22.224803" level="WARN">Multiple tests with name '[Documentation]' executed in suite 'CURA Healthcare Service - Web Application.Testcase.CURA LOG001'.</msg>
+<msg time="2026-04-09T13:42:24.512878" level="WARN">Multiple tests with name '[Documentation]' executed in suite 'CURA Healthcare Service - Web Application.Testcase.CURA LOG001'.</msg>
+<msg time="2026-04-09T13:42:26.800415" level="WARN">Multiple tests with name '[Documentation]' executed in suite 'CURA Healthcare Service - Web Application.Testcase.CURA LOG001'.</msg>
+</errors>
+</robot>

@@ -1,0 +1,9 @@
+${test_id},${facility},${readmission},${program},${visit_date},${comment},${expected_status},${description}
+CURA_APPT001_001,Tokyo CURA Healthcare Center,Yes,Medicare,12/05/2026,"Aas;1224xfcdp"":;'',.",Success,กรณีระบุข้อมูลถูกต้องครบถ้วน
+CURA_APPT001_002,Tokyo CURA Healthcare Center,No,Medicare,12/05/2026,"Aas;1224xfcdp"":;'',.",Success,กรณีไม่ทำเครื่องหมาย Apply for hospital readmission
+CURA_APPT001_003,Tokyo CURA Healthcare Center,Yes,Medicare,12/05/2026,,Success,กรณีกรอกข้อมูลถูกต้อง แต่ไม่ระบุ Comment
+CURA_APPT001_004,Tokyo CURA Healthcare Center,Yes,Medicare,kk/kk/kkkk,"Aas;1224xfcdp"":;'',.",Success,กรณีระบุวันที่เป็นตัวอักษร (ระบบจะเปลี่ยนเป็นวันที่ปัจจุบัน)
+CURA_APPT001_005,Tokyo CURA Healthcare Center,Yes,Medicare,12/05/2026,Logout Test,Logout_Success,กรณีจองสำเร็จแล้ว Logout และ Back Browser
+CURA_APPT001_006,Tokyo CURA Healthcare Center,Yes,Medicare,,,Error_MissingDate,กรณีไม่ระบุวันที่ (ระบบต้องเตือนให้กรอก)
+CURA_APPT001_007,Tokyo CURA Healthcare Center,Yes,Medicare,01/01/2001,"Aas;1224xfcdp"":;'',.",Fail,กรณีระบุวันที่ในอดีต (ระบบยังยอมให้จอง = Bug)
+CURA_APPT001_008,Tokyo CURA Healthcare Center,Yes,Medicare,12/05/2026,"<html><body><h1>Test</h1></body></html>",Success,กรณีระบุ Script HTML ในช่อง Comment
