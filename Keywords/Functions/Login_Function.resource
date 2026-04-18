@@ -56,6 +56,12 @@ Verify Login Result
     END
 
 Logout Process
+    [Documentation]    เปิดเมนูและกดออกจากระบบ
+
+    Wait Until Element Is Visible    ${MENU_TOGGLE}    10s
     Click Element    ${MENU_TOGGLE}
+
     Wait Until Element Is Visible    ${LOGOUT_LINK}    5s
     Click Element    ${LOGOUT_LINK}
+
+    Wait Until Element Is Visible    ${APPT_BTN}    10s
